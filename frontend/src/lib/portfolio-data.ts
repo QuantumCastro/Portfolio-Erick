@@ -129,7 +129,7 @@ export const PROJECTS: Project[] = [
       es: "Dashboard de visualización financiera en tiempo real.",
     },
     url: "https://compound-vs-simple.vercel.app/",
-    tags: ["React", "Node.js", "HTML + CSS","TypeScript + JS (only-build)"],
+    tags: ["React", "Node.js", "HTML + CSS","TypeScript + JS (only-build)", "Next.js"],
     icon: "database",
   },
   {
@@ -140,7 +140,7 @@ export const PROJECTS: Project[] = [
       es: "Simulación 2D sobre dinámica de poblaciones con figuras geometricas.",
     },
     url: "https://evolution-simulator-gamma.vercel.app/",
-    tags: ["Node.js", "React", "HTML + CSS", "TypeScript + JS (only-build)"],
+    tags: ["Node.js", "React", "HTML + CSS", "TypeScript + JS (only-build)", "Astro"],
     icon: "smartphone",
   },
   {
