@@ -15,7 +15,7 @@ const projectIcons: Record<Project["icon"], JSX.Element> = {
   terminal: <Terminal className="h-5 w-5" />,
 };
 
-const projectOrder = [1, 2, 3];
+const projectOrder = [5, 2, 3, 6, 4, 1];
 const projectOrderIndex = new Map(projectOrder.map((id, index) => [id, index]));
 
 export function ProjectsSection({ copy, lang, projects, isDark }: ProjectsSectionProps) {

@@ -85,7 +85,7 @@ export const COPY: Record<Lang, Copy> = {
       error: "Something went wrong. Please try again.",
       success: "Message sent successfully!",
     },
-    footer: "© 2025 DevPortfolio. Built with precision.",
+    footer: "© 2026 DevPortfolio. Built with precision.",
   },
   es: {
     nav: { projects: "Proyectos", stack: "Stack", contact: "Contacto" },
@@ -116,7 +116,7 @@ export const COPY: Record<Lang, Copy> = {
       error: "No se pudo enviar. Intenta de nuevo.",
       success: "¡Mensaje enviado correctamente!",
     },
-    footer: "© 2025 DevPortfolio. Construido con precisión.",
+    footer: "© 2026 DevPortfolio. Construido con precisión.",
   },
 };
 
@@ -162,7 +162,7 @@ export const PROJECTS: Project[] = [
       es: "Mini-Juego 2D inspirado en Flappy Bird, demuestra capacidad de renderizado.",
     },
     url: "https://flappy-frontend.vercel.app/",
-    tags: ["Next.js", "Render", "Canvas"],
+    tags: ["Next.js", "HTML", "CSS", "Canvas", "TypeScript + JS (only-build)"],
     icon: "terminal",
   },
   {
