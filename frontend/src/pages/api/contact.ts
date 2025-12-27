@@ -28,7 +28,7 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse({ error: "Missing required fields." }, 400);
   }
 
-  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return jsonResponse({ error: "Invalid email address." }, 400);
   }
 

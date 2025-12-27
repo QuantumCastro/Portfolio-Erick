@@ -7,7 +7,7 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 const enableImageOptimizer = process.env.ENABLE_IMAGE_OPTIMIZER === "true";
 
 export default defineConfig({
-  output: "hybrid",
+  output: "static",
   adapter: vercel({webAnalytics: { enabled: true },}),
   integrations: [
     react(),
