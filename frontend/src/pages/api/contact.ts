@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
-import { ContactEmail } from "../../emails/ContactEmail";
+import { ContactEmail } from "../../components/emails/ContactEmail";
 
 export const prerender = false;
 
