@@ -2,7 +2,7 @@ export type Lang = "en" | "es";
 export type Level = "expert" | "intermediate" | "basic";
 
 export type Copy = {
-  nav: { home: string; projects: string; stack: string; contact: string };
+  nav: { projects: string; stack: string; contact: string };
   hero: {
     role: string;
     titleStart: string;
@@ -57,7 +57,7 @@ export type Tech = {
 
 export const COPY: Record<Lang, Copy> = {
   en: {
-    nav: { home: "Home", projects: "Projects", stack: "Stack", contact: "Contact" },
+    nav: { projects: "Projects", stack: "Stack", contact: "Contact" },
     hero: {
       role: "Junior Full-Stack Engineer",
       titleStart: "Coding the",
@@ -76,7 +76,7 @@ export const COPY: Record<Lang, Copy> = {
       levels: { expert: "Expert", intermediate: "Intermediate", basic: "Basic" },
     },
     contact: {
-      title: "Get in Touch",
+      title: "Contact",
       email: "Your Email",
       subject: "Subject",
       message: "Message",
@@ -88,7 +88,7 @@ export const COPY: Record<Lang, Copy> = {
     footer: "© 2025 DevPortfolio. Built with precision.",
   },
   es: {
-    nav: { home: "Inicio", projects: "Proyectos", stack: "Stack", contact: "Contacto" },
+    nav: { projects: "Proyectos", stack: "Stack", contact: "Contacto" },
     hero: {
       role: "Ingeniero Full-Stack Junior",
       titleStart: "Programando el",

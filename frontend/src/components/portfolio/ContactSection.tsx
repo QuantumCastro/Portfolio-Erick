@@ -77,7 +77,7 @@ export function ContactSection({ copy, isDark }: ContactSectionProps) {
   };
 
   return (
-    <section id="contact" className="mx-auto w-full max-w-2xl scroll-mt-24">
+    <section id="contact" className="mx-auto w-full max-w-2xl scroll-mt-16">
       <div className="mb-8 text-center">
         <h2 className="mb-3 text-2xl sm:text-3xl font-bold tracking-tight">{copy.contact.title}</h2>
         <div className={`mx-auto h-1 w-16 rounded-full ${isDark ? "bg-purple-500" : "bg-blue-600"}`} />

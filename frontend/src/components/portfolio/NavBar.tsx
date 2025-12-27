@@ -34,18 +34,40 @@ export function NavBar({ copy, lang, onLangToggle, theme, onThemeToggle, isDark 
   return (
     <nav
       className={`fixed inset-x-0 top-0 z-50 h-16 border-b backdrop-blur-md transition-colors duration-500 ${
-        isDark ? "bg-[#050505]/90 border-gray-800" : "bg-white/90 border-gray-200"
+        isDark ? "bg-[#050505]/70 border-gray-800" : "bg-white/70 border-gray-200"
       }`}
     >
       <div className="relative mx-auto flex h-full max-w-5xl items-center justify-between px-4">
         <div className="flex-shrink-0">
-          <a href="#home" className="text-lg font-bold tracking-tighter sm:text-xl">
-            Dev<span className={isDark ? "text-purple-500" : "text-blue-600"}>.</span>
+          <a href="#top" className="group inline-flex items-center gap-2 text-lg font-bold tracking-tighter sm:text-xl">
+            <span
+              className={`relative flex h-4 w-4 items-center justify-center rounded-[6px] border bg-gradient-to-br text-current shadow-sm transition-transform duration-300 motion-reduce:animate-none animate-[logoNudge_800ms_cubic-bezier(0.16,1,0.3,1)_1] group-hover:scale-110 group-hover:rotate-[360deg] sm:h-5 sm:w-5 ${
+                isDark
+                  ? "border-purple-500/40 from-purple-500/30 via-transparent to-purple-500/10 text-purple-300 shadow-purple-500/20"
+                  : "border-blue-500/40 from-blue-500/30 via-transparent to-blue-500/10 text-blue-700 shadow-blue-500/20"
+              }`}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-3.5 w-3.5 sm:h-4 sm:w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="7" y="7" width="10" height="10" rx="2" />
+                <path d="M4 9h3M4 15h3M17 9h3M17 15h3M9 4v3M15 4v3M9 17v3M15 17v3" />
+              </svg>
+            </span>
+            <span>
+              Dev<span className={isDark ? "text-purple-500" : "text-blue-600"}>.</span>
+            </span>
           </a>
         </div>
 
         <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-2 sm:gap-4">
-          <NavButton href="#home" label={copy.nav.home} isDark={isDark} />
           <NavButton href="#projects" label={copy.nav.projects} isDark={isDark} />
           <NavButton href="#technologies" label={copy.nav.stack} isDark={isDark} />
           <NavButton href="#contact" label={copy.nav.contact} isDark={isDark} />

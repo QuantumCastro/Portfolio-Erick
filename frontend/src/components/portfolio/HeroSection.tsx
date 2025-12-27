@@ -1,15 +1,16 @@
 import type { Copy } from "../../lib/portfolio-data";
 import type { JSX } from "react";
-import { ArrowRight, Code2, Mail, Network } from "lucide-react";
+import { ArrowRight, Layers, Mail } from "lucide-react";
 
 type SocialButtonProps = {
   href: string;
   icon: JSX.Element;
   label: string;
   isDark: boolean;
+  className?: string;
 };
 
-function SocialButton({ href, icon, label, isDark }: SocialButtonProps) {
+function SocialButton({ href, icon, label, isDark, className }: SocialButtonProps) {
   return (
     <a
       href={href}
@@ -19,7 +20,7 @@ function SocialButton({ href, icon, label, isDark }: SocialButtonProps) {
           isDark
             ? "bg-gray-900 border-gray-800 text-gray-400 hover:text-white hover:border-purple-500/50"
             : "bg-white border-gray-200 text-slate-500 hover:text-blue-600 hover:border-blue-200 shadow-sm"
-        }`}
+        } ${className ?? ""}`}
     >
       {icon}
     </a>
@@ -33,7 +34,7 @@ type HeroSectionProps = {
 
 export function HeroSection({ copy, isDark }: HeroSectionProps) {
   return (
-    <section id="home" className="min-h-[50vh] scroll-mt-24 pt-6 animate-fade-in flex flex-col justify-center">
+    <section id="top" className="min-h-[50vh] scroll-mt-24 pt-6 animate-fade-in flex flex-col justify-center">
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <h2 className={`text-xl sm:text-2xl font-bold tracking-tight whitespace-nowrap ${isDark ? "text-white" : "text-slate-900"}`}>
           Erick Jiménez
@@ -69,9 +70,20 @@ export function HeroSection({ copy, isDark }: HeroSectionProps) {
           {copy.hero.cta} <ArrowRight size={18} />
         </a>
         <div className="flex gap-2">
-          <SocialButton href="#" label="Github" icon={<Code2 size={20} />} isDark={isDark} />
-          <SocialButton href="#" label="LinkedIn" icon={<Network size={20} />} isDark={isDark} />
-          <SocialButton href="#contact" label="Email" icon={<Mail size={20} />} isDark={isDark} />
+          <SocialButton
+            href="#technologies"
+            label="Stack"
+            icon={<Layers size={20} />}
+            isDark={isDark}
+            className="motion-reduce:animate-none animate-[stackHint_1.6s_ease-in-out_infinite]"
+          />
+          <SocialButton
+            href="#contact"
+            label="Email"
+            icon={<Mail size={20} />}
+            isDark={isDark}
+            className="motion-reduce:animate-none animate-[stackHint_1.6s_ease-in-out_infinite]"
+          />
         </div>
       </div>
     </section>

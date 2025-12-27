@@ -35,7 +35,7 @@ export function ProjectsSection({ copy, lang, projects, isDark }: ProjectsSectio
   });
 
   return (
-    <section id="projects" className="scroll-mt-24">
+    <section id="projects" className="scroll-mt-16">
       <div className="mb-8 flex items-baseline justify-between border-b pb-4 border-gray-200/10">
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">{copy.projects.title}</h2>
       </div>

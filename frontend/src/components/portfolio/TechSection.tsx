@@ -126,7 +126,7 @@ export function TechSection({ copy, lang, technologies, isDark, activeTech, onTo
   });
 
   return (
-    <section id="technologies" className="scroll-mt-24">
+    <section id="technologies" className="scroll-mt-16">
       <div className="mb-8">
         <h2 className="mb-2 text-2xl sm:text-3xl font-bold tracking-tight">{copy.tech.title}</h2>
         <p className={`flex items-center gap-2 text-sm ${isDark ? "text-gray-500" : "text-slate-500"}`}>
