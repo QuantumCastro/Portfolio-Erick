@@ -169,8 +169,8 @@ export const PROJECTS: Project[] = [
     id: 5,
     title: "Vitrum",
     desc: {
-      en: "A modern website that competes with Obsidian with a more visual and intuitive interface.",
-      es: "Web moderna que compite con Obsidian con una interfaz más visual e intuituva.",
+      en: "A modern website that competes with Obsidian with a more intuitive interface.",
+      es: "Web moderna que compite con Obsidian con una interfaz más intuituva.",
     },
     url: "https://vitrum-frontend-gamma.vercel.app/",
     tags: ["Node.js", "React", "Docker", "Python", "Astro","PostgreSQL", "TypeScript + JS (only-build)", "HTML + CSS", "NGINX", "FastAPI"],
