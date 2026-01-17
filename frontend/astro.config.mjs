@@ -8,7 +8,7 @@ const enableImageOptimizer = process.env.ENABLE_IMAGE_OPTIMIZER === "true";
 
 export default defineConfig({
   output: "static",
-  adapter: vercel({webAnalytics: { enabled: true },}),
+  adapter: vercel({ webAnalytics: { enabled: true } }),
   integrations: [
     react(),
     tailwind({

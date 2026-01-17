@@ -13,9 +13,10 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse({ error: "Invalid content type." }, 400);
   }
 
-  let payload: { email?: string; subject?: string; message?: string };
+  let payload: Record<string, unknown>;
   try {
-    payload = await request.json();
+    const data: unknown = await request.json();
+    payload = typeof data === "object" && data !== null ? (data as Record<string, unknown>) : {};
   } catch {
     return jsonResponse({ error: "Invalid JSON payload." }, 400);
   }

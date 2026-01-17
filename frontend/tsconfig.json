@@ -4,14 +4,8 @@
     "baseUrl": ".",
     "jsx": "react-jsx",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     }
   },
-  "include": [
-    "src/**/*",
-    "astro.config.mjs",
-    "vitest.config.ts"
-  ]
+  "include": ["src/**/*", "astro.config.mjs", "vitest.config.ts"]
 }

@@ -15,12 +15,11 @@ function SocialButton({ href, icon, label, isDark, className }: SocialButtonProp
     <a
       href={href}
       aria-label={label}
-      className={`p-3 rounded-lg border transition-all duration-200 hover:-translate-y-0.5
-        ${
-          isDark
-            ? "bg-gray-900 border-gray-800 text-gray-400 hover:text-white hover:border-purple-500/50"
-            : "bg-white border-gray-200 text-slate-500 hover:text-blue-600 hover:border-blue-200 shadow-sm"
-        } ${className ?? ""}`}
+      className={`rounded-lg border p-3 transition-all duration-200 hover:-translate-y-0.5 ${
+        isDark
+          ? "border-gray-800 bg-gray-900 text-gray-400 hover:border-purple-500/50 hover:text-white"
+          : "border-gray-200 bg-white text-slate-500 shadow-sm hover:border-blue-200 hover:text-blue-600"
+      } ${className ?? ""}`}
     >
       {icon}
     </a>
@@ -34,13 +33,18 @@ type HeroSectionProps = {
 
 export function HeroSection({ copy, isDark }: HeroSectionProps) {
   return (
-    <section id="top" className="min-h-[50vh] scroll-mt-24 pt-6 animate-fade-in flex flex-col justify-center">
+    <section
+      id="top"
+      className="animate-fade-in flex min-h-[50vh] scroll-mt-24 flex-col justify-center pt-6"
+    >
       <div className="mb-4 flex flex-wrap items-center gap-2">
-        <h2 className={`text-xl sm:text-2xl font-bold tracking-tight whitespace-nowrap ${isDark ? "text-white" : "text-slate-900"}`}>
+        <h2
+          className={`whitespace-nowrap text-xl font-bold tracking-tight sm:text-2xl ${isDark ? "text-white" : "text-slate-900"}`}
+        >
           Erick Jiménez
         </h2>
         <span
-          className={`inline-block rounded-full px-2 py-0.5 text-[10px] sm:text-xs font-bold uppercase tracking-widest border ${isDark ? "border-purple-500/20 text-purple-400 bg-purple-500/10" : "border-blue-200 text-blue-700 bg-blue-50"}`}
+          className={`inline-block rounded-full border px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest sm:text-xs ${isDark ? "border-purple-500/20 bg-purple-500/10 text-purple-400" : "border-blue-200 bg-blue-50 text-blue-700"}`}
         >
           {copy.hero.role}
         </span>
@@ -58,13 +62,19 @@ export function HeroSection({ copy, isDark }: HeroSectionProps) {
         {copy.hero.titleEnd}
       </h1>
 
-      <p className={`mb-8 max-w-xl text-lg leading-relaxed sm:text-xl ${isDark ? "text-gray-400" : "text-slate-600"}`}>{copy.hero.intro}</p>
+      <p
+        className={`mb-8 max-w-xl text-lg leading-relaxed sm:text-xl ${isDark ? "text-gray-400" : "text-slate-600"}`}
+      >
+        {copy.hero.intro}
+      </p>
 
       <div className="flex flex-wrap items-center gap-3">
         <a
           href="#projects"
-          className={`flex h-12 items-center gap-2 rounded-lg px-6 font-semibold transition-transform active:scale-95 whitespace-nowrap ${
-            isDark ? "bg-white text-black hover:bg-gray-200" : "bg-slate-900 text-white hover:bg-slate-800 shadow-xl shadow-blue-900/10"
+          className={`flex h-12 items-center gap-2 whitespace-nowrap rounded-lg px-6 font-semibold transition-transform active:scale-95 ${
+            isDark
+              ? "bg-white text-black hover:bg-gray-200"
+              : "bg-slate-900 text-white shadow-xl shadow-blue-900/10 hover:bg-slate-800"
           }`}
         >
           {copy.hero.cta} <ArrowRight size={18} />
@@ -75,14 +85,14 @@ export function HeroSection({ copy, isDark }: HeroSectionProps) {
             label="Stack"
             icon={<Layers size={20} />}
             isDark={isDark}
-            className="motion-reduce:animate-none animate-[stackHint_1.6s_ease-in-out_infinite]"
+            className="animate-[stackHint_1.6s_ease-in-out_infinite] motion-reduce:animate-none"
           />
           <SocialButton
             href="#contact"
             label="Email"
             icon={<Mail size={20} />}
             isDark={isDark}
-            className="motion-reduce:animate-none animate-[stackHint_1.6s_ease-in-out_infinite]"
+            className="animate-[stackHint_1.6s_ease-in-out_infinite] motion-reduce:animate-none"
           />
         </div>
       </div>

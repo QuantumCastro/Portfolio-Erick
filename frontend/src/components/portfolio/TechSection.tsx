@@ -1,6 +1,20 @@
 import type { Copy, Lang, Tech } from "../../lib/portfolio-data";
 import type { JSX } from "react";
-import { Activity, Box, ChevronDown, Code, Database, FileCode, Globe, Layers, LayoutTemplate, Palette, Server, Terminal, Zap } from "lucide-react";
+import {
+  Activity,
+  Box,
+  ChevronDown,
+  Code,
+  Database,
+  FileCode,
+  Globe,
+  Layers,
+  LayoutTemplate,
+  Palette,
+  Server,
+  Terminal,
+  Zap,
+} from "lucide-react";
 
 type TechSectionProps = {
   copy: Copy;
@@ -73,18 +87,25 @@ function TechCard({ tech, lang, isDark, isActive, onClick, levelLabels }: TechCa
   return (
     <button
       onClick={onClick}
-      className={`w-full text-left transition-all duration-300 rounded-lg p-3 sm:p-4 border border-transparent ${activeClass}`}
+      className={`w-full rounded-lg border border-transparent p-3 text-left transition-all duration-300 sm:p-4 ${activeClass}`}
       aria-expanded={isActive}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <span className={`p-2 rounded-md bg-opacity-10 ${levelColors[tech.level].replace("border", "bg")}`} aria-hidden>
+          <span
+            className={`rounded-md bg-opacity-10 p-2 ${levelColors[tech.level].replace("border", "bg")}`}
+            aria-hidden
+          >
             {techIcons[tech.icon]}
           </span>
           <div>
-            <h4 className={`font-bold text-sm sm:text-base ${isDark ? "text-gray-100" : "text-gray-900"}`}>{tech.name}</h4>
+            <h4
+              className={`text-sm font-bold sm:text-base ${isDark ? "text-gray-100" : "text-gray-900"}`}
+            >
+              {tech.name}
+            </h4>
             <span
-              className={`text-[10px] sm:text-xs font-mono uppercase tracking-wider ${levelColors[tech.level].split(" ")[1]}`}
+              className={`font-mono text-[10px] uppercase tracking-wider sm:text-xs ${levelColors[tech.level].split(" ")[1]}`}
             >
               {levelLabels[tech.level]}
             </span>
@@ -98,18 +119,29 @@ function TechCard({ tech, lang, isDark, isActive, onClick, levelLabels }: TechCa
 
       <div
         className={`grid transition-all duration-300 ease-in-out ${
-          isActive ? "grid-rows-[1fr] opacity-100 mt-2 sm:mt-3" : "grid-rows-[0fr] opacity-0"
+          isActive ? "mt-2 grid-rows-[1fr] opacity-100 sm:mt-3" : "grid-rows-[0fr] opacity-0"
         }`}
       >
         <div className="overflow-hidden">
-          <p className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-gray-400" : "text-gray-600"}`}>{tech.desc[lang]}</p>
+          <p
+            className={`text-xs leading-relaxed sm:text-sm ${isDark ? "text-gray-400" : "text-gray-600"}`}
+          >
+            {tech.desc[lang]}
+          </p>
         </div>
       </div>
     </button>
   );
 }
 
-export function TechSection({ copy, lang, technologies, isDark, activeTech, onToggle }: TechSectionProps) {
+export function TechSection({
+  copy,
+  lang,
+  technologies,
+  isDark,
+  activeTech,
+  onToggle,
+}: TechSectionProps) {
   const orderedTechnologies = [...technologies].sort((left, right) => {
     const leftIndex = techOrderIndex.get(left.id);
     const rightIndex = techOrderIndex.get(right.id);
@@ -128,13 +160,15 @@ export function TechSection({ copy, lang, technologies, isDark, activeTech, onTo
   return (
     <section id="technologies" className="scroll-mt-16">
       <div className="mb-8">
-        <h2 className="mb-2 text-2xl sm:text-3xl font-bold tracking-tight">{copy.tech.title}</h2>
-        <p className={`flex items-center gap-2 text-sm ${isDark ? "text-gray-500" : "text-slate-500"}`}>
+        <h2 className="mb-2 text-2xl font-bold tracking-tight sm:text-3xl">{copy.tech.title}</h2>
+        <p
+          className={`flex items-center gap-2 text-sm ${isDark ? "text-gray-500" : "text-slate-500"}`}
+        >
           <Layers size={14} /> {copy.tech.subtitle}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
         {orderedTechnologies.map((tech) => (
           <TechCard
             key={tech.id}

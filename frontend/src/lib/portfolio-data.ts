@@ -11,7 +11,7 @@ export type Copy = {
     intro: string;
     cta: string;
   };
-  projects: { title: string; visit: string };
+  projects: { title: string; visit: string; github: string; githubLabel: string };
   tech: { title: string; subtitle: string; levels: Record<Level, string> };
   contact: {
     title: string;
@@ -69,6 +69,8 @@ export const COPY: Record<Lang, Copy> = {
     projects: {
       title: "Selected Projects",
       visit: "Visit Website",
+      github: "GitHub",
+      githubLabel: "Open GitHub profile",
     },
     tech: {
       title: "Stack",
@@ -100,6 +102,8 @@ export const COPY: Record<Lang, Copy> = {
     projects: {
       title: "Proyectos Destacados",
       visit: "Visitar Web",
+      github: "GitHub",
+      githubLabel: "Abrir perfil de GitHub",
     },
     tech: {
       title: "Tecnologías",
@@ -129,7 +133,7 @@ export const PROJECTS: Project[] = [
       es: "Dashboard de visualización financiera en tiempo real.",
     },
     url: "https://compound-vs-simple.vercel.app/",
-    tags: ["React", "Node.js", "HTML + CSS","TypeScript + JS (only-build)", "Next.js"],
+    tags: ["React", "Node.js", "HTML + CSS", "TypeScript + JS (only-build)", "Next.js"],
     icon: "database",
   },
   {
@@ -173,7 +177,18 @@ export const PROJECTS: Project[] = [
       es: "Web moderna que compite con Obsidian con una interfaz más intuituva.",
     },
     url: "https://vitrum-frontend-gamma.vercel.app/",
-    tags: ["Node.js", "React", "Docker", "Python", "Astro","PostgreSQL", "TypeScript + JS (only-build)", "HTML + CSS", "NGINX", "FastAPI"],
+    tags: [
+      "Node.js",
+      "React",
+      "Docker",
+      "Python",
+      "Astro",
+      "PostgreSQL",
+      "TypeScript + JS (only-build)",
+      "HTML + CSS",
+      "NGINX",
+      "FastAPI",
+    ],
     icon: "terminal",
   },
   {
@@ -187,8 +202,7 @@ export const PROJECTS: Project[] = [
     tags: ["Astro", "React", "HTML", "CSS", "Node.js"],
     icon: "terminal",
   },
-]
-
+];
 
 export const TECHNOLOGIES: Tech[] = [
   {

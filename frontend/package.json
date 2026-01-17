@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node -r ./scripts/astro-symlink-fix.cjs ./node_modules/astro/astro.js build",
     "preview": "astro preview",
     "lint": "eslint .",
     "test": "vitest run --passWithNoTests",
@@ -16,8 +16,8 @@
     "format:fix": "prettier --write ."
   },
   "engines": {
-    "node": ">=20.10.0",
-    "pnpm": ">=9.0.0"
+    "node": ">=24.1.0",
+    "pnpm": ">=10.25.0"
   },
   "dependencies": {
     "@nanostores/react": "^1.0.0",
@@ -54,6 +54,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^16.5.0",
+    "jsdom": "^27.4.0",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",

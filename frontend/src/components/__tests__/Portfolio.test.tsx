@@ -30,7 +30,7 @@ describe("Portfolio", () => {
     render(<Portfolio />);
     const card = screen.getByRole("button", { name: /Next\.js/i });
     fireEvent.click(card);
-    expect(screen.getByText(/App Router architecture/i)).toBeInTheDocument();
+    expect(screen.getByText(/hybrid rendering/i)).toBeInTheDocument();
     expect(card).toHaveAttribute("aria-expanded", "true");
     fireEvent.click(card);
     expect(card).toHaveAttribute("aria-expanded", "false");
@@ -39,7 +39,7 @@ describe("Portfolio", () => {
   it("muestra estado de envio en el formulario de contacto", async () => {
     const fetchMock = vi.fn().mockResolvedValue({
       ok: true,
-      json: async () => ({ ok: true }),
+      json: () => Promise.resolve({ ok: true }),
     });
     vi.stubGlobal("fetch", fetchMock);
     render(<Portfolio />);
@@ -55,7 +55,7 @@ describe("Portfolio", () => {
     });
     const status = screen.getByRole("status");
     expect(status).toHaveTextContent(/Sending/i);
-    await screen.findByText(/Message sent successfully/i);
+    await screen.findByText(/Message sent successfully/i, { selector: "[role='status']" });
     vi.unstubAllGlobals();
   });
 });

@@ -5,6 +5,9 @@ default: verify
 setup:
   pnpm install
 
+format:
+  pnpm --dir frontend format:fix
+  pnpm --dir frontend format
 
 lint:
   pnpm --dir frontend lint

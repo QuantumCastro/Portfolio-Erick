@@ -40,10 +40,17 @@ export function Portfolio() {
         isDark={isDark}
       />
 
-      <main className="mx-auto max-w-5xl px-4 pt-16 pb-8 sm:px-6 space-y-16 sm:space-y-20">
+      <main className="mx-auto max-w-5xl space-y-16 px-4 pb-8 pt-16 sm:space-y-20 sm:px-6">
         <HeroSection copy={copy} isDark={isDark} />
         <ProjectsSection copy={copy} lang={lang} projects={PROJECTS} isDark={isDark} />
-        <TechSection copy={copy} lang={lang} technologies={TECHNOLOGIES} isDark={isDark} activeTech={activeTech} onToggle={handleTechToggle} />
+        <TechSection
+          copy={copy}
+          lang={lang}
+          technologies={TECHNOLOGIES}
+          isDark={isDark}
+          activeTech={activeTech}
+          onToggle={handleTechToggle}
+        />
         <ContactSection copy={copy} isDark={isDark} />
       </main>
 

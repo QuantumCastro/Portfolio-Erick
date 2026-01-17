@@ -11,7 +11,7 @@
     "audit": "pnpm audit --prod"
   },
   "engines": {
-    "node": ">=20.10.0",
-    "pnpm": ">=9.0.0"
+    "node": ">=24.1.0",
+    "pnpm": ">=10.25.0"
   }
 }
